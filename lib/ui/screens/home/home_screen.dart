@@ -17,7 +17,7 @@ class HomeScreen extends StatelessWidget {
         songRepository: context.read<SongRepository>(),
         userHistoryRepository: context.read<UserHistoryRepository>(),
         playerState: context.read<PlayerState>(),
-      )..init(),
+      ),
       child: const HomeContent(),
     );
   }

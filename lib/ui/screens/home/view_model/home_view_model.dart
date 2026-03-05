@@ -31,17 +31,6 @@ class HomeViewModel extends ChangeNotifier {
 
   List<Song> get recentSongs => _recentSongs.take(3).toList();
 
-  List<Song> get recommendedSongs {
-    final recentIds = _recentSongs.map((song) => song.id).toSet();
-    final suggestions = _allSongs
-        .where((song) => !recentIds.contains(song.id))
-        .take(3)
-        .toList();
-
-    if (suggestions.isNotEmpty) return suggestions;
-    return _allSongs.take(3).toList();
-  }
-
   bool isPlaying(Song song) => _playerState.currentSong?.id == song.id;
 
   void play(Song song) {

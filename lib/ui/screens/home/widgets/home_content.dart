@@ -35,19 +35,6 @@ class HomeContent extends StatelessWidget {
                 onPlay: () => viewModel.play(song),
               ),
             ),
-            const SizedBox(height: 36),
-            Text(
-              "You might also like",
-              style: AppTextStyles.label.copyWith(color: AppColors.textLight),
-            ),
-            const SizedBox(height: 8),
-            ...viewModel.recommendedSongs.map(
-              (song) => HomeSongRow(
-                song: song,
-                isPlaying: viewModel.isPlaying(song),
-                onPlay: () => viewModel.play(song),
-              ),
-            ),
           ],
         ),
       ),
